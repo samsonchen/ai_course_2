@@ -1,0 +1,48 @@
+/* ─── Design tokens ──────────────────────────────────────────────────────── */
+:root {
+  --color-primary:       #72D350;
+  --color-primary-dark:  #5CBF3A;
+  --color-bg:            #FAF7F2;
+  --color-white:         #ffffff;
+  --color-text-primary:  #1A1A1A;
+  --color-text-secondary:#4B5563;
+  --color-border:        #E5E5E5;
+  --color-indigo:        #6366F1;
+  --color-amber:         #F59E0B;
+
+  --font-heading: 'Funnel Sans', system-ui, -apple-system, sans-serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+
+  --radius-pill: 9999px;
+  --radius-bubble: 12px;
+}
+
+/* ─── Reset ──────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input, textarea {
+  font-family: inherit;
+}

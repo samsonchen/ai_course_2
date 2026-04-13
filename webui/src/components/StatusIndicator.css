@@ -1,0 +1,68 @@
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.status-badge__dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Connected */
+.status-badge--connected {
+  background-color: var(--color-primary-dark);
+}
+.status-badge--connected .status-badge__dot {
+  background-color: #ffffff;
+}
+
+/* Connecting */
+.status-badge--connecting {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.status-badge--connecting .status-badge__dot {
+  background-color: #ffffff;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+/* Reconnecting */
+.status-badge--reconnecting {
+  background-color: rgba(245, 158, 11, 0.5);
+}
+.status-badge--reconnecting .status-badge__dot {
+  background-color: #ffffff;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+/* Disconnected / failed */
+.status-badge--disconnected,
+.status-badge--failed {
+  background-color: rgba(239, 68, 68, 0.5);
+}
+.status-badge--disconnected .status-badge__dot,
+.status-badge--failed .status-badge__dot {
+  background-color: #ffffff;
+}
+
+/* Idle */
+.status-badge--idle {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.status-badge--idle .status-badge__dot {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}

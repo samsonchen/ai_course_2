@@ -1,0 +1,129 @@
+/* ─── System message ─────────────────────────────────────────────────────── */
+
+.msg-system {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 4px 0;
+}
+
+.msg-system__text {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-primary-dark);
+}
+
+/* ─── Message row ────────────────────────────────────────────────────────── */
+
+.msg-row {
+  display: flex;
+  width: 100%;
+  gap: 12px;
+}
+
+.msg-row--other {
+  justify-content: flex-start;
+}
+
+.msg-row--own {
+  justify-content: flex-end;
+}
+
+/* ─── Avatar ─────────────────────────────────────────────────────────────── */
+
+.msg-avatar {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  align-self: flex-end;
+}
+
+/* ─── Bubble ─────────────────────────────────────────────────────────────── */
+
+.msg-bubble {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 14px;
+  border-radius: var(--radius-bubble);
+  max-width: min(480px, 70vw);
+  word-break: break-word;
+}
+
+.msg-bubble--other {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-bottom-left-radius: 4px;
+}
+
+.msg-bubble--own {
+  background-color: var(--color-primary);
+  border-bottom-right-radius: 4px;
+}
+
+/* ─── Bubble content ─────────────────────────────────────────────────────── */
+
+.msg-name {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.msg-text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.msg-text--own {
+  color: #ffffff;
+}
+
+.msg-time {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  align-self: flex-end;
+}
+
+.msg-time--own {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ─── Mobile ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .msg-row {
+    gap: 8px;
+  }
+
+  .msg-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 10px;
+  }
+
+  .msg-bubble {
+    padding: 8px 12px;
+    gap: 3px;
+    max-width: min(300px, 80vw);
+  }
+
+  .msg-system__text {
+    font-size: 12px;
+  }
+}

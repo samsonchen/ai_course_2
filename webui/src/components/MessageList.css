@@ -1,0 +1,27 @@
+.message-list {
+  flex: 1;
+  min-height: 0; /* critical: lets flex child shrink and scroll */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 40px;
+  background-color: var(--color-bg);
+  scroll-behavior: smooth;
+}
+
+.message-list__empty {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin: auto;
+  padding: 40px 0;
+}
+
+@media (max-width: 767px) {
+  .message-list {
+    padding: 16px 12px;
+    gap: 12px;
+  }
+}

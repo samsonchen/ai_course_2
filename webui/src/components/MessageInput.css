@@ -1,0 +1,89 @@
+.msg-input-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 40px;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  flex-shrink: 0;
+  /* Push above iOS safe-area (virtual keyboard, home indicator) */
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+
+.msg-input-bar__field {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg);
+  font-size: 14px;
+  color: var(--color-text-primary);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.msg-input-bar__field::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.msg-input-bar__field:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(114, 211, 80, 0.15);
+}
+
+.msg-input-bar__field:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.msg-input-bar__send {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s, opacity 0.15s;
+  /* Minimum tap target */
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.msg-input-bar__send:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+}
+
+.msg-input-bar__send:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ─── Mobile ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .msg-input-bar {
+    padding: 10px 12px;
+    gap: 8px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+  }
+
+  .msg-input-bar__field {
+    padding: 10px 14px;
+  }
+
+  .msg-input-bar__send {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .msg-input-bar__send svg {
+    width: 18px;
+    height: 18px;
+  }
+}

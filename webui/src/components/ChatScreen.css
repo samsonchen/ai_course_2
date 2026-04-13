@@ -1,0 +1,116 @@
+/* ─── Screen container ───────────────────────────────────────────────────── */
+
+.chat-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────── */
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 64px;
+  padding: 0 40px;
+  background-color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.chat-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+}
+
+.chat-header__logo-text {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.chat-header__spacer {
+  flex: 1;
+}
+
+.chat-header__callsign {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─── Banners ────────────────────────────────────────────────────────────── */
+
+.chat-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 10px 40px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.chat-banner--error {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border-bottom: 1px solid #fecaca;
+}
+
+.chat-banner--warn {
+  background-color: #fffbeb;
+  color: #92400e;
+  border-bottom: 1px solid #fde68a;
+}
+
+.chat-banner__btn {
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  background-color: #ef4444;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  transition: background-color 0.15s;
+}
+
+.chat-banner__btn:hover {
+  background-color: #dc2626;
+}
+
+/* ─── Mobile ─────────────────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .chat-header {
+    height: 56px;
+    padding: 0 16px;
+    gap: 10px;
+  }
+
+  .chat-header__logo-text {
+    font-size: 18px;
+  }
+
+  .chat-header__callsign {
+    font-size: 12px;
+    max-width: 80px;
+  }
+
+  .chat-banner {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
